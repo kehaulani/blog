@@ -1,0 +1,11 @@
+<% title 'User Profile' %>
+
+<%= div_for @user do %>
+Name: <%= @user.name %><br>
+Email: <%= @user.email %>
+<% end %>
+
+<% if current_user === @user %>
+	<%= link_to "Edit", edit_user_path(@user) %> |
+	<%= link_to "Delete Account", user_path(@user), method: :delete, confirm: {message: "Are you sure?"} %>
+<% end %>

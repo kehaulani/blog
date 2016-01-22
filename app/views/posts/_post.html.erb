@@ -1,0 +1,8 @@
+<%= div_for post do %>
+	<div class = "title">
+		<h2> <%= link_to_unless_current post.title, post %></h2>
+	</div>
+	<div class = "entries">
+		<p> <%= post.body %></p>
+	</div>
+<% end %>

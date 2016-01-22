@@ -1,0 +1,9 @@
+<% title "Comment for "+ @post.title %>
+
+<%= render @comment %>
+
+<%= link_to "Edit", edit_post_comment_path(@post,@comment), class: "btn btn-primary" %>
+<%= link_to "Delete", post_comment_path(@post,@comment), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger" %>
+<br>
+
+<%= link_to "Back", post_path(@post) %>

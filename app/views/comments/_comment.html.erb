@@ -1,0 +1,6 @@
+<%= div_for comment do %>
+    <div id="comment">
+    <h3><%= link_to_unless_current comment.title, post_comment_path(@post,comment) %></h3>
+    <p><%= comment.body %></p>
+    </div>
+<% end%>
