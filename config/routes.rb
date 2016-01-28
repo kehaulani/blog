@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :users
   resources :sessions
   resources :password_resets, only: [:new, :create, :edit, :update]

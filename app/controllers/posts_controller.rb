@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy ]
 
   def index
-    @posts = @current_user.posts.all
+      if params[:tag]
+          @posts = @current_user.posts.tagged_with(params[:tag])
+      else
+          @posts = @current_user.posts.all
+      end
   end
 
   def new
@@ -43,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title,:body)
+    params.require(:post).permit(:title,:tag_list,:body)
   end
 
   def set_post
