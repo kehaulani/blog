@@ -1,12 +1,13 @@
 <div class= "wrapper">
-    <div class= "content">
-
-        <%= render @post %>
+    <div class= "content" id="myposts">
+        <div id = "post">
+            <%= render @post %>
+        </div>
         <p>
 			Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 		</p>
 
-        <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary"%>
+        <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary", id: "edit_link", remote: true %>
         <%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %><br>
 
         <h3>Comments</h3>

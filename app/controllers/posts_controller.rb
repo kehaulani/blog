@@ -8,6 +8,12 @@ class PostsController < ApplicationController
       else
           @posts = @current_user.posts.all
       end
+=begin
+      @search = Post.search do
+          fulltext params[:search]
+      end
+      @posts = @search.results
+=end
   end
 
   def new
@@ -19,7 +25,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       redirect_to @post, notice: "Successfully created posts."
-    else
+   else
       render :new
     end
   end
@@ -33,9 +39,12 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to @post, notice: "Successfully saved post."
+        respond_to do |format|
+            format.html { redirect_to @post, notice: "Successfully saved post." }
+            format.js
+        end
     else
-      render :edit
+        format.html { render :edit }
     end
   end
 

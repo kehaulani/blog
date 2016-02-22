@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
 
   def login(user,remember = false)
     if remember
-      cookies.permanent[:auth_token] = @user.auth_token
+      cookies.permanent[:auth_token] = user.auth_token
     else
-      cookies[:auth_token] = @user.auth_token
+      cookies[:auth_token] = user.auth_token
     end
   end
 

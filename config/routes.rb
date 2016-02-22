@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'sign_up' => 'users#new'
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
+  get '/auth/:provider/callback' => 'authentications#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
