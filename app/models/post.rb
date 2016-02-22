@@ -6,9 +6,4 @@ class Post < ActiveRecord::Base
 
     acts_as_taggable
 
-=begin  searchable do
-
-        text :title, :body
-    end
-=end
 end

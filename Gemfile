@@ -34,12 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#App Gems
-gem 'figaro'
-gem 'omniauth-github'
-gem 'omniauth-facebook'
-gem 'omniauth', '~> 1.0'
-
 gem 'acts-as-taggable-on', '~> 3.4'
 
 #gem 'sunspot_rails'

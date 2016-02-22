@@ -8,12 +8,6 @@ class PostsController < ApplicationController
       else
           @posts = @current_user.posts.all
       end
-=begin
-      @search = Post.search do
-          fulltext params[:search]
-      end
-      @posts = @search.results
-=end
   end
 
   def new
@@ -25,7 +19,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       redirect_to @post, notice: "Successfully created posts."
-   else
+    else
       render :new
     end
   end
