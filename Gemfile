@@ -4,13 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
-group :production do
-    gem 'pg'
-end
+gem 'pg'
+#gem 'sqlite3'
 
-group :development do
-    gem 'sqlite3'
-end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
