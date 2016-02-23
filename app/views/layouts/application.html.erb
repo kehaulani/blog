@@ -26,16 +26,6 @@
                 <% end %>
                 <%= nav_link "About", about_path %>
 			</ul>
-            <ul class="navbar-form pull-left">
-                <% if current_user %>
-                    <%= form_tag posts_path, :method => :get do %>
-                        <p>
-                            <%= text_field_tag :search, params[:search] %>
-                            <%= submit_tag "Search", :name => nil %>
-                        </p>
-                        <% end %>
-                <% end %>
-            </ul>
             <ul class="nav navbar-nav pull-right">
                 <% if current_user %>
                     <%= nav_link current_user.name, user_path(current_user) %>
