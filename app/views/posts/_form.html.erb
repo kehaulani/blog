@@ -1,5 +1,5 @@
-<div class="entries" id="post_form">
-<%= bootstrap_form_for @post, remote: true do |f| %>
+<div class="entries">
+<%= bootstrap_form_for @post do |f| %>
 	<%= f.alert_message "Please fix the errors below." %>
 	<%= f.text_field :title %>
 	<%= f.text_field :tag_list, value: @post.tag_list.join(', ') %>

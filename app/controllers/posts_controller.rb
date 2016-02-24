@@ -33,12 +33,9 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-        respond_to do |format|
-            format.html { redirect_to @post, notice: "Successfully saved post." }
-            format.js
-        end
+      redirect_to @post, notice: "Successfully saved post."
     else
-        format.html { render :edit }
+      render :edit
     end
   end
 
