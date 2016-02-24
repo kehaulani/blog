@@ -32,12 +32,16 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes(post_params)
-      redirect_to @post, notice: "Successfully saved post."
-    else
-      render :edit
-    end
-  end
+     if @post.update_attributes(post_params)
+         respond_to do |format|
+             format.html { redirect_to @post, notice: "Successfully saved post." }
+             format.js
+         end
+     else
+         format.html { render :edit }
+     end
+   end
+
 
   def destroy
     @post.destroy
